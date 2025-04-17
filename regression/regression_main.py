@@ -13,7 +13,7 @@ def multi_ols_data():
                   [1, 4, 5],
                   [1, 6, 7],
                   ])
-    y = np.array([6], [9], [14])
+    y = np.array([[6], [9], [14]])
     return X, y
 
 
@@ -28,12 +28,11 @@ def fit_single():
             "Prediction is {} ------ Actual Is {} ------- Error Is {}".format(prediction_y, y[i], y[i] - prediction_y))
 
 
-
 if __name__ == "__main__":
     fit_single()
+    X, y = multi_ols_data()
     mols = MultiOrdinaryLeastSquare(independent=X, dependent=y)
     beta = mols.slope()
-
-
-
-
+    print("Intercept is {}".format(beta[0][0]))
+    print("Feature 1 Coeff is {}".format(beta[1][0]))
+    print("Feature 2 Coeff is {}".format(beta[2][0]))
