@@ -4,7 +4,7 @@ import torch
 a = torch.rand(2,2)
 print(a)
 
-print(a+2)
+print(2+a)
 print(a-2)
 print(a/2)
 print(a*3)
@@ -44,11 +44,12 @@ a = torch.randint(0,10,(4,3))
 b = torch.randint(0,5,(3,4))
 
 print(torch.matmul(a,b))
+a = torch.tensor(data=[1,2,3])
+b = torch.tensor(data=[2,3,4])
+print(torch.dot(a,b))
 
 
 
-
-
-
-
+a = torch.randint(0,10,(4,3))
+print(torch.transpose(a))
 
